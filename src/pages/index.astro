@@ -1,11 +1,131 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
+import Hero from "../components/Hero.astro";
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import { getCollection, getEntry } from "astro:content";
+import Card from "../components/Card.astro";
+import Section from "../components/Section.astro";
+
+const cards = await getCollection("cards");
+const gallery = await getCollection("gallery");
 ---
 
 <Layout>
-	<Welcome />
+  <Hero
+    subtitle={"How are you ?"}
+    links={[
+      {
+        text: "Projects",
+        href: "#oss",
+      },
+      {
+        text: "Gallery",
+        href: "#gallery",
+      },
+      {
+        text: "About",
+        href: "#about",
+      },
+      {
+        text: "Blog",
+        href: "https://tronica.substack.com",
+      },
+    ]}
+  />
+
+  <Section title="Open Source Projects" id="oss">
+    <h2 class="prose text-3xl md:text-4xl mb-10 text-center">
+      <span class="highlight-accent highlight-thin"> Open source </span>
+    </h2>
+    <p class="prose m-auto text-center">
+      Explore some of our open source projects. Designed as creative and
+      technical explorations, each project explores new possibilities while
+      maintaining high technical standards and practical applications. <br />
+      <a target="_blank" href="https://github.com/patrixr"
+        >Discover more on github</a
+      >
+    </p>
+    <div
+      class="justify-center mt-10 flex flex-wrap gap-10"
+      data-astro-cid-vc5tsdmu=""
+    >
+      {
+        cards.map((card, i) => {
+          return <Card data={card.data} flip={i % 2 === 0} />;
+        })
+      }
+    </div>
+  </Section>
+
+  <Section title="Gallery" id="gallery">
+    <h2 class="prose text-3xl md:text-4xl mb-10 text-center">
+      <span class="highlight-accent highlight-thin"> Art & Installations </span>
+    </h2>
+    <p class="prose m-auto text-center">
+      From creative coding sketches to physical installations. We believe in
+      using technology as a creative medium. Explore below some of our favourite
+      creations.
+    </p>
+    <div
+      class="justify-center mt-10 flex flex-wrap gap-10"
+      data-astro-cid-vc5tsdmu=""
+    >
+      {
+        gallery.map((item: any) => {
+          return (
+            <div class="relative w-96 h-96 overflow-hidden">
+              <img
+                class="w-full h-full object-cover rounded-lg"
+                src={item.data.images[0]}
+                alt=""
+              />
+              <div class="info flex flex-col transition-transform bg-black/20 z-10 translate-y-8/10 p-4 text-gray-200 absolute bottom-0 left-0 h-full w-full">
+                <div class="text-[0.7em]">{item.data.subtitle}</div>
+                <div>{item.data.title}</div>
+              </div>
+            </div>
+          );
+        })
+      }
+    </div>
+  </Section>
+
+  <Section title="About" id="about">
+    <h2 class="prose text-3xl md:text-4xl mb-10 text-center">
+      <span class="highlight-accent highlight-thin"> About </span>
+    </h2>
+    <p class="prose m-auto text-center">
+      Hi, I'm Patrick. I founded Tronica to push the boundaries of what's
+      possible in creative technology. Working from Hong Kong, I collaborate
+      with an international network of innovative technologists. <br /><br /> As
+      a professional software consultant, I help businesses transform their digital
+      offering while pursuing creative technological innovations. If you have a business
+      challenge or a creative project in mind, feel free to reach out.
+    </p>
+    <div class="flex justify-center p-10">
+      <form action="https://formspree.io/f/mvgzneop" method="POST">
+        <fieldset class="fieldset w-xs bg-base-200 p-4 rounded-box">
+          <div class="m-auto">
+            <legend class="fieldset-legend mb-5">Drop us a message</legend>
+
+            <label class="fieldset-label">Email</label>
+            <input
+              type="text"
+              name="email"
+              class="input mb-5"
+              placeholder="foo@bar.com"
+            />
+
+            <label class="fieldset-label">Message</label>
+            <textarea
+              name="message"
+              class="textarea mb-5"
+              placeholder="Hello ..."></textarea>
+
+            <input type="submit" class="input" placeholder="Submit" />
+          </div>
+        </fieldset>
+      </form>
+    </div>
+  </Section>
 </Layout>
