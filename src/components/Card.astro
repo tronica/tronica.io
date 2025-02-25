@@ -3,7 +3,7 @@ const { data, flip = false } = Astro.props;
 const { id, title, subtitle, brief, image, href, tags = [] } = data;
 ---
 
-<a class="card glass w-lg h-72" href={href} target=" _blank">
+<a class="card glass w-lg min-h-72" href={href} target=" _blank">
   <div class="card-body">
     <h2 class="card-title font-light">{subtitle}</h2>
     <p class="text-xl font-fancy">
