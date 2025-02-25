@@ -12,7 +12,7 @@ const { id, title, subtitle, brief, image, href, tags = [] } = data;
     <p class="prose text-md text-base-900 max-w-96">
       {brief}
     </p>
-    <div class="tags flex gap-2 pt-2">
+    <div class="tags md:flex gap-2 pt-2 hidden">
       {tags.map((t: string) => <div class="badge badge-soft">{t}</div>)}
     </div>
     <div class="flex justify-end card-actions">
