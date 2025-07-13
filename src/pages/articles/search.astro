@@ -11,7 +11,7 @@ const allBlogArticles: CollectionEntry<'blog'>[] = await getCollection('blog');
 
 // Filter articles based on query
 const searchResults = allBlogArticles.filter(article => {
-  if (!article.data.publush) {
+  if (!article.data.publish) {
     return false;
   }
 
