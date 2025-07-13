@@ -3,66 +3,67 @@ import SectionTitle from "../ui/SectionTitle.astro";
 import ServiceCard from "../ui/ServiceCard.astro";
 import Section from "./Section.astro";
 
-import c1 from "../../assets/pics/card-pic1.png";
-import c2 from "../../assets/pics/card-pic2.png";
-import c3 from "../../assets/pics/card-pic3.png";
-import c4 from "../../assets/pics/card-pic4.png";
-import c5 from "../../assets/pics/card-pic5.png";
+import c1 from "../../assets/pics/undraw_circles.svg";
+import c2 from "../../assets/pics/undraw_ai-agent.svg";
+import c3 from "../../assets/pics/undraw_progressive-app.svg";
+import c4 from "../../assets/pics/undraw_online-transactions.svg";
+import c5 from "../../assets/pics/undraw_experience-design.svg";
 import c6 from "../../assets/pics/card-pic6.png";
 
 const cards = [
   {
     index: 1,
-    titleTop: "Search Engine",
-    titleBottom: "Optimization",
+    titleTop: "Technology Consulting",
+    titleBottom: "",
     img: c1,
-    alt: "SEO",
-    link: "https://google.com",
+    alt: "Consulting",
+    // link: "https://google.com",
+    body: 'Solution architecture'
   },
   {
     index: 2,
-    titleTop: "Pay-per-click",
-    titleBottom: "advertising",
+    titleTop: "AI Innovation",
+    titleBottom: "& Engineering",
     img: c2,
     alt: "SEO",
-    link: "https://google.com",
+    // link: "https://google.com",
   },
   {
     index: 3,
-    titleTop: "Social Media",
-    titleBottom: "Marketing",
+    titleTop: "Software Architecture",
+    titleBottom: "& Development",
     img: c3,
     alt: "SEO",
-    link: "https://google.com",
+    // link: "https://google.com",
   },
   {
     index: 1,
-    titleTop: "Email",
-    titleBottom: "Marketing",
+    titleTop: "Workflow",
+    titleBottom: "& Automation",
     img: c4,
-    alt: "SEO",
-    link: "https://google.com",
+    alt: "workflow",
+    // link: "https://google.com",
   },
   {
     index: 2,
-    titleTop: "Content",
-    titleBottom: "Creation",
+    titleTop: "Website Design",
+    titleBottom: "& Creation",
     img: c5,
-    alt: "SEO",
-    link: "https://google.com",
+    alt: "website",
+    // link: "https://google.com",
   },
   {
     index: 3,
-    titleTop: "Analytics and",
-    titleBottom: "Tracking",
+    titleTop: "Devops",
+    titleBottom: "& Monitoring",
     img: c6,
     alt: "SEO",
-    link: "https://google.com",
+    // link: "https://google.com",
   },
 ];
 
 const description =
-  "At our digital marketing agency, we offer a range of services to help businesses grow and succeed online. These services include";
+  "At Tronica, we offer a range of services to help businesses grow and succeed in their creative and technology ambitions. These services include";
 ---
 
 <Section id="services">
@@ -78,6 +79,7 @@ const description =
             img={card.img}
             alt={card.alt}
             link={card.link}
+            body={card.body}
           />
         ))
       }

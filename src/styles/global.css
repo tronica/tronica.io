@@ -18,6 +18,7 @@
   --color-dark: var(--dark);
   --color-gray: var(--gray);
   --color-white: var(--white);
+  --color-background: var(--background);
 }
 
 @layer base {
@@ -47,75 +48,13 @@
   }
 
   :root {
-    --accent: #219ebc;
+    --accent: #ff6678;
     --black: rgb(0, 0, 0);
     --dark: #191a23;
     --gray: #f3f3f3;
     --white: #ffffff;
+    --background: #fff1e6;
   }
-
-  /* @layer base {
-    * {
-      box-sizing: border-box;
-      font-family: "Grotesk", sans-serif;
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-size: 20px;
-    }
-
-    p {
-      font-size: 1rem;
-    }
-
-    h1 {
-      font-size: 3rem;
-      line-height: 120%;
-      font-weight: 500;
-    }
-
-    h2 {
-      font-size: 2rem;
-      font-weight: 500;
-    }
-
-    h3 {
-      font-size: 1.5rem;
-      font-weight: 500;
-    }
-
-    h4 {
-      font-size: 1rem;
-      font-weight: 500;
-    }
-
-    @media (max-width: 640px) {
-      body {
-        font-size: 16px;
-      }
-
-      p {
-        font-size: 1rem;
-      }
-
-      h1 {
-        font-size: 2.688rem;
-      }
-
-      h2 {
-        font-size: 2.25rem;
-      }
-
-      h3 {
-        font-size: 1.625rem;
-      }
-
-      h4 {
-        font-size: 1.125rem;
-      }
-    }
-  } */
 }
 
 @utility btn-primary {
@@ -126,7 +65,7 @@
 }
 
 @utility btn-secondary {
-  @apply bg-transparent text-black px-[35px] py-5 rounded-lg border border-solid border-black transition-all duration-200;
+  @apply bg-background text-black px-[35px] py-5 rounded-lg border border-solid border-black transition-all duration-200;
   &:hover {
     @apply bg-black text-white border-accent transform scale-105;
   }
@@ -135,11 +74,11 @@
 @utility btn-tertiary {
   @apply bg-accent text-black rounded-lg px-[35px] py-5 transition-all duration-200;
   &:hover {
-    @apply bg-white text-black transform scale-105;
+    @apply bg-background text-black transform scale-105;
   }
 }
 
-@utility greenhead {
+@utility accented {
   @apply bg-accent text-black rounded-[7px] px-[7px];
 }
 
