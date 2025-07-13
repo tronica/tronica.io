@@ -18,7 +18,7 @@ export default {
         medium: 500,
       },
       colors: {
-        green: "var(--green)",
+        green: "var(--color-accent)",
         black: "var(--black)",
         dark: "var(--dark)",
         gray: "var(--gray)",

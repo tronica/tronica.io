@@ -12,7 +12,7 @@ const processedTestimonials = Testimonials.map((item, index, array) => ({
   id="ProjectSlider"
   class="swiper mt-10"
   style={{
-    "--swiper-pagination-color": "var(--green)",
+    "--swiper-pagination-color": "var(--color-accent)",
     "--swiper-pagination-bullet-inactive-color": "#fff",
     "--swiper-pagination-bullet-inactive-opacity": "1",
     "--swiper-pagination-bullet-size": "19px",
@@ -105,7 +105,7 @@ const processedTestimonials = Testimonials.map((item, index, array) => ({
     background-color: var(--dark);
     color: var(--gray);
     border-radius: 45px;
-    border: 1px solid var(--green);
+    border: 1px solid var(--color-accent);
   }
   .bubble:after {
     content: "";
@@ -123,7 +123,7 @@ const processedTestimonials = Testimonials.map((item, index, array) => ({
     left: 48px; /* This should be 1px less than the left value of .bubble:after */
     border-width: 20px; /* Adjust this to match the border-width of .bubble:after */
     border-style: solid;
-    border-color: var(--green) transparent transparent var(--green);
+    border-color: var(--color-accent) transparent transparent var(--color-accent);
   }
   .swiper-wrapper {
     position: relative;
