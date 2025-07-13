@@ -5,12 +5,16 @@ import SearchForm from "../../components/ui/SearchForm.astro";
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 
-const query: string | null = Astro.url.searchParams.get('query');
+const query: string = Astro.url.searchParams.get('query') ?? ""
 
 const allBlogArticles: CollectionEntry<'blog'>[] = await getCollection('blog');
 
 // Filter articles based on query
 const searchResults = allBlogArticles.filter(article => {
+  if (!article.data.publush) {
+    return false;
+  }
+
   const titleMatch: boolean = article.data.title
     .toLowerCase()
     .includes(query!.toLowerCase());
@@ -47,7 +51,7 @@ const searchResults = allBlogArticles.filter(article => {
               {searchResults.map(article => (
                 <ArticleCard article={article} />
               ))}
-            </div>  
+            </div>
         </div>
 	</main>
 </MainLayout>

@@ -4,7 +4,7 @@ import TeamCard from "../ui/TeamCard.astro";
 import Section from "./Section.astro";
 
 const description =
-  "Meet the skilled and experienced team behind our successful digital marketing strategies";
+  "Meet the skilled and experienced team behind our successful creative technology projects";
 
 import rhys from "../../assets/team/rhys.jpg";
 import patrick from "../../assets/team/patrick.jpg";
@@ -34,7 +34,7 @@ const gridRows = displayTeam.length <= 3 ? "grid-rows-1" : "grid-rows-2";
 ---
 
 <Section id="about">
-  <div class="mt-[140px]">
+  <div class="mt-[140px] mb-20">
     <SectionTitle sectionTitle="Team" description={description} />
     <div
       class={`grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 pb-4 ${gridRows} gap-10`}

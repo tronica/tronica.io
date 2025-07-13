@@ -8,25 +8,35 @@ import type { CollectionEntry } from "astro:content";
 const currentPage: number | null = +Astro.url.searchParams.get('page')! || 1;
 
 const allBlogArticles: CollectionEntry<'blog'>[] = (await getCollection('blog'))
-  .sort((a:CollectionEntry<'blog'>, b:CollectionEntry<'blog'>) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+  .filter(b => b.data.publish)
+  .sort((a: CollectionEntry<'blog'>, b: CollectionEntry<'blog'>) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+const comingsoon = true;
 
 ---
 
-<MainLayout title="#ff6678 - Blog">
+<MainLayout title="Our work">
 	<main class="space-y-20">
-            <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-3">
-                <div class="mx-auto max-w-screen-sm text-center lg:mb-16 mb-8">
-                    <h2 class="mb-4 text-3xl lg:text-4xl tracking-tight font-extrabold">Our Blog</h2>
-                    <p class="font-light sm:text-xl">We use an agile approach to test assumptions and connect with the needs of your audience early and often.</p>
-                </div> 
-                <br>
-                <SearchForm />
-                <br>
+        <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-3">
+            <div class="mx-auto max-w-screen-sm text-center lg:mb-16 mb-8">
+                <h2 class="mb-4 text-3xl lg:text-4xl tracking-tight font-extrabold">Our Work</h2>
+                <p class="font-light sm:text-xl">Browse through our experiences</p>
+            </div>
+            <br>
+            <SearchForm />
+            <br>
+            {comingsoon ? (
+                <div class="text-center py-8">
+                    <h3 class="text-2xl font-bold">Coming Soon!</h3>
+                    <p class="mt-4">Our blog is currently under construction. Stay tuned for updates!</p>
+                </div>
+            ) : (
                 <div class="grid gap-8 lg:grid-cols-2">
                     {allBlogArticles.map(article => (
                         <ArticleCard article={article} />
                     ))}
-                </div>  
-            </div>
+                </div>
+            )}
+        </div>
 	</main>
 </MainLayout>

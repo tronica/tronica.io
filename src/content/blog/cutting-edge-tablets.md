@@ -1,13 +1,14 @@
 ---
-title: 'Unleash Creativity With These Cutting-Edge Tablets'
+title: "Unleash Creativity With These Cutting-Edge Tablets"
 pubDate: 2024-01-14
-author: 'Bonnie Green'
-authImage: 'https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/bonnie-green.png'
-image: 'image5.png'
-tags: ['tablets', 'gadgets']
+author: "Bonnie Green"
+authImage: "https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/bonnie-green.png"
+image: "image5.png"
+tags: ["tablets", "gadgets"]
 slug: unleash-creativity-with-these-cutting-edge-tablets
 summary: "In the world of digital creativity, tablets have become indispensable tools for artists, designers, and anyone seeking to unleash their artistic potential."
 type: "Article"
+publish: false
 ---
 
 In the world of digital creativity, tablets have become indispensable tools for artists, designers, and anyone seeking to unleash their artistic potential. In 2024, the market is brimming with cutting-edge tablets that offer new dimensions of creativity. Let's dive into the exciting realm of tablet technology and discover the tools that can help you bring your artistic visions to life.

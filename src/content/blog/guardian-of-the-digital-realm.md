@@ -1,13 +1,14 @@
 ---
-title: 'Guardian of the Digital Realm: Web Security'
+title: "Guardian of the Digital Realm: Web Security"
 pubDate: 2024-01-14
-author: 'Jese Leos'
-authImage: 'https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/jese-leos.png'
-image: 'image2.png'
-tags: ['code', 'security', 'tech']
+author: "Jese Leos"
+authImage: "https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/jese-leos.png"
+image: "image2.png"
+tags: ["code", "security", "tech"]
 slug: guardian-of-the-digital-realm-web-security
 summary: "In today's interconnected world, where data breaches and cyber threats are on the rise, web security has become paramount. As the guardians of the digital realm..."
 type: "Tutorial"
+publish: false
 ---
 
 In today's interconnected world, where data breaches and cyber threats are on the rise, web security has become paramount. As the guardians of the digital realm, it's our responsibility to protect sensitive information, maintain user trust, and ensure the integrity of online systems. Let's dive into the world of web security and explore the key principles that every developer should embrace.
