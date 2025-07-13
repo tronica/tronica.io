@@ -1,13 +1,14 @@
-// @ts-check
-import { defineConfig } from "astro/config";
-import tailwindcss from "@tailwindcss/vite";
-import preact from "@astrojs/preact";
+import { defineConfig } from 'astro/config';
+
+import tailwind from "@astrojs/tailwind";
+
+// Import the Vercel adapter
+import vercel from '@astrojs/vercel';
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://tronica.io",
-  integrations: [preact()],
-  vite: {
-    plugins: [tailwindcss()],
-  },
+  site: "https://positivustheme.vercel.app",
+  integrations: [tailwind()],
+  output: 'server',
+  adapter: vercel(),
 });
