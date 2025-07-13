@@ -1,6 +1,24 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+  --breakpoint-*: initial;
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1536px;
+
+  --font-grotesk: Grotesk, sans-serif;
+
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+
+  --color-accent: var(--accent);
+  --color-black: var(--black);
+  --color-dark: var(--dark);
+  --color-gray: var(--gray);
+  --color-white: var(--white);
+}
 
 @layer base {
   @font-face {
@@ -29,7 +47,7 @@
   }
 
   :root {
-    --green: #b9ff66;
+    --accent: #219ebc;
     --black: rgb(0, 0, 0);
     --dark: #191a23;
     --gray: #f3f3f3;
@@ -98,41 +116,39 @@
       }
     }
   } */
+}
 
-  @layer components {
-    .btn-primary {
-      @apply bg-dark text-white rounded-lg px-[35px] py-5 transition-all duration-200;
-    }
-    .btn-primary:hover {
-      @apply bg-green text-black transform scale-105;
-    }
-
-    .btn-secondary {
-      @apply bg-transparent text-black px-[35px] py-5 rounded-lg border border-solid border-black transition-all duration-200;
-    }
-    .btn-secondary:hover {
-      @apply bg-black text-white border-green transform scale-105;
-    }
-
-    .btn-tertiary {
-      @apply bg-green text-black rounded-lg px-[35px] py-5 transition-all duration-200;
-    }
-    .btn-tertiary:hover {
-      @apply bg-white text-black transform scale-105;
-    }
-
-    .greenhead {
-      @apply bg-green text-black rounded-[7px] px-[7px];
-    }
-
-    .whitehead {
-      @apply bg-white text-black rounded-[7px] px-[7px];
-    }
-
-    .blackhead {
-      @apply bg-black text-white rounded-[7px] px-[7px];
-    }
+@utility btn-primary {
+  @apply bg-dark text-white rounded-lg px-[35px] py-5 transition-all duration-200;
+  &:hover {
+    @apply bg-accent text-black transform scale-105;
   }
+}
+
+@utility btn-secondary {
+  @apply bg-transparent text-black px-[35px] py-5 rounded-lg border border-solid border-black transition-all duration-200;
+  &:hover {
+    @apply bg-black text-white border-accent transform scale-105;
+  }
+}
+
+@utility btn-tertiary {
+  @apply bg-accent text-black rounded-lg px-[35px] py-5 transition-all duration-200;
+  &:hover {
+    @apply bg-white text-black transform scale-105;
+  }
+}
+
+@utility greenhead {
+  @apply bg-accent text-black rounded-[7px] px-[7px];
+}
+
+@utility whitehead {
+  @apply bg-white text-black rounded-[7px] px-[7px];
+}
+
+@utility blackhead {
+  @apply bg-black text-white rounded-[7px] px-[7px];
 }
 
 /* custom scrollbar */
